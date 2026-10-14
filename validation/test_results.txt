@@ -1,0 +1,7 @@
+test_named_member_cache_hash_and_archive_layout (test_download.DownloadTests.test_named_member_cache_hash_and_archive_layout) ... ok
+test_complete_fixture_run_and_prediction (test_project.TextTests.test_complete_fixture_run_and_prediction) ... ok
+test_conflicting_labels_removed (test_project.TextTests.test_conflicting_labels_removed) ... ok
+test_normalization_and_duplicate_isolation (test_project.TextTests.test_normalization_and_duplicate_isolation) ... ok
+test_training_vocabulary_and_exact_explanations (test_project.TextTests.test_training_vocabulary_and_exact_explanations) ... ok
+Ran 5 tests in 0.474s
+OK

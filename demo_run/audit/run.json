@@ -1,0 +1,33 @@
+{
+  "mode": "quick",
+  "seed": 42,
+  "utc": "2026-10-10T06:28:11.280281+00:00",
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "joblib": "1.5.3",
+    "Pillow": "12.3.0"
+  },
+  "data_sha256": "53f58c7a2d4309398d415a2fe00aa80d754f94a06cf26ba3ce17e3c3fd245219",
+  "dataset": "SIMULATED demonstration fixture; not a real-data benchmark",
+  "selected": "word_naive_bayes",
+  "threshold": 0.5,
+  "data_audit": {
+    "original_rows": 360,
+    "conflicting_label_rows_removed": 0,
+    "duplicates_removed": 0,
+    "rows_after_deduplication": 360,
+    "rows_used": 360
+  },
+  "split_sizes": {
+    "train": 216,
+    "validation": 72,
+    "test": 72
+  },
+  "selection": "maximum validation average precision",
+  "threshold_selection": "maximum validation spam F1"
+}

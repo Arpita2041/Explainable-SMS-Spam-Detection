@@ -1,0 +1,42 @@
+{
+  "label": "ham",
+  "spam_probability": 0.0001258772596362303,
+  "threshold": 0.5,
+  "selected": "word_naive_bayes",
+  "training_data_source": "SIMULATED demonstration fixture; not a real-data benchmark",
+  "explanation": {
+    "intercept": -0.6931471805599454,
+    "log_odds": -8.980077370473998,
+    "features": [
+      {
+        "feature": "meeting notes",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "notes",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "please",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "the",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "tomorrow",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "the meeting",
+        "contribution": -1.2291542584206483
+      },
+      {
+        "feature": "meeting",
+        "contribution": -0.9120046393901632
+      }
+    ],
+    "meaning": "Positive contributions increase spam log-odds; negative ones decrease them."
+  }
+}

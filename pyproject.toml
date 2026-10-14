@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sms-spam-course"
+version = "1.0.0"
+description = "Explainable SMS Spam Detection"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+license = "MIT"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["project*"]
