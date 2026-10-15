@@ -78,6 +78,8 @@ Upload the folder's contents, including .github and .gitignore, as one repositor
 Do not upload .venv, data/raw, or outputs. Original code uses MIT; public
 datasets retain the licenses and attribution described in DATA_CARD.md.
 
+**Development date:** December 2024
+
 demo_run/ includes a completed, explicitly simulated software demonstration and its saved model. Inspect it without retraining:
 
 ~~~bash
