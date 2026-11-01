@@ -13,11 +13,11 @@ The projects require Python 3.11
 
 The project is designed around the UCI SMS Spam Collection Dataset. This experiment used 360 artificially constructed SMS messages. These messages were deliberately designed to test whether the software works.
 
-  -Implemented text preprocessing techniques such as Unicode normalization, case folding, whitespace cleaning, and duplicate removal.
-  -Used TF-IDF feature extraction to convert SMS messages into numerical representations.
-  - Explored both word-level and character-level TF-IDF features.
-  - Compared different Machine Learning algorithms, including Naive Bayes and Logistic Regression, to identify an effective classification model.
-  -Implemented a spelling-perturbation test to examine how the models respond to selected changes in spam-related words.
+	- Implemented text preprocessing techniques such as Unicode normalization, case folding, whitespace cleaning, and duplicate removal.
+	- Used TF-IDF feature extraction to convert SMS messages into numerical representations.
+	- Explored both word-level and character-level TF-IDF features.
+	- Compared different Machine Learning algorithms, including Naive Bayes and Logistic Regression, to identify an effective classification model.
+	- Implemented a spelling-perturbation test to examine how the models respond to selected changes in spam-related words.
 
 ## Result
 
