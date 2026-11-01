@@ -1,86 +1,29 @@
 # Explainable SMS Spam Detection
 
-Classify SMS messages as spam or legitimate text using word and character TF-IDF models. The project removes duplicated text before splitting and explains each prediction through exact linear feature contributions.
+The main objective is to develop a Machine Learning system that automatically classifies SMS messages as Spam or Ham and explains why a particular classification was made.
+	- Spam: Unwanted, suspicious, fraudulent, or unsolicited promotional messages.
+	- Ham: Normal, legitimate SMS messages.
+Instead of simply predicting Spam or Ham, the system identifies which text features contributed to the prediction using exact feature contributions.
 
 ## Setup
 
-Use Python 3.11 or later. Commands below are run inside this project folder.
-Create a separate environment for each project.
+The projects require Python 3.11
 
-~~~bash
-python -m venv .venv
-~~~
+## Workflow
 
-Activate it with .venv\Scripts\activate on Windows, or source .venv/bin/activate
-on Linux/macOS. Then:
+The project is designed around the UCI SMS Spam Collection Dataset. This experiment used 360 artificially constructed SMS messages. These messages were deliberately designed to test whether the software works.
 
-~~~bash
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-~~~
+  -Implemented text preprocessing techniques such as Unicode normalization, case folding, whitespace cleaning, and duplicate removal.
+  -Used TF-IDF feature extraction to convert SMS messages into numerical representations.
+  - Explored both word-level and character-level TF-IDF features.
+  - Compared different Machine Learning algorithms, including Naive Bayes and Logistic Regression, to identify an effective classification model.
+  -Implemented a spelling-perturbation test to examine how the models respond to selected changes in spam-related words.
 
-The dependency versions are the tested CPU environment. No GPU, account, or
-paid API is required. Package installation requires internet unless those
-packages are already installed. Use requirements-notebook.txt if you also want
-to run notebooks/Project_Walkthrough.ipynb in JupyterLab.
+## Result
 
-## Run
-
-For a first local demonstration:
-
-~~~bash
-python main.py demo
-~~~
-
-
-~~~bash
-python main.py download
-python main.py train --mode quick --output outputs/quick
-python main.py train --mode full --output outputs/full
-python main.py predict --model outputs/full/models/model.joblib --text "Please send the meeting notes tomorrow"
-~~~
-
-The first regular run downloads the official UCI dataset. If the download fails, use the manual file location described in the error. A separate offline demonstration uses simulated data:
-
-~~~bash
-python main.py train --mode quick --data data/demo/sms_demo.tsv --output outputs/demo
-python main.py predict --model outputs/demo/models/model.joblib --text "Please send the meeting notes tomorrow"
-~~~
-
-The simulated demonstration checks the software; its scores are not benchmark results. Full mode uses the official dataset when --data is omitted. There is no silent fallback to simulated data.
-
-## Outputs and code
-
-Every run writes models, reports, and audit information inside the requested
-output folder. Open reports/index.html in a browser to inspect the plots and
-metric tables. reports/metrics.csv holds the measured comparison.
-audit/run.json records settings, versions, seeds, and data provenance.
-The inference command loads the saved training artifact; it does not retrain.
-Load only checkpoints produced by this repository or another trusted source,
-because joblib uses Python object serialization.
-
-project/ contains the implementation. main.py is the command-line entry point.
-tests/ exercises the data protocol and essential mathematical behavior.
-notebooks/Project_Walkthrough.ipynb runs the same implementation step by step.
-METHODOLOGY.md explains the experiment, DATA_CARD.md documents the source,
-and STUDY_GUIDE.md lists the code and concepts for the project exam.
-VALIDATION.md states what was actually verified in the delivery environment.
-
-Quick mode is for checking the workflow. Use full mode for the course's main
-experiment and report the run's actual results. Seeds support reproducibility,
-but numerical differences can occur across dependency versions or platforms.
-
-## GitHub
-
-This folder is an independent repository root. It includes a dependency file,
-package metadata, a license, ignore rules, and a GitHub Actions test workflow.
-Upload the folder's contents, including .github and .gitignore, as one repository.
-Do not upload .venv, data/raw, or outputs. Original code uses MIT; public
-datasets retain the licenses and attribution described in DATA_CARD.md.
+In the initial software demonstration, the learned models achieved 100% accuracy on a simulated dataset of 360 messages. However, Demonstration model returns ham with spam probability 0.000126 at threshold 0.5. Negative contributions from features such as 'meeting notes', 'notes', 'please', and 'tomorrow' reduce spam log-odds. 
 
 **Development date:** December 2024
-
-demo_run/ includes a completed, explicitly simulated software demonstration and its saved model. Inspect it without retraining:
 
 ~~~bash
 python main.py predict --model demo_run/models/model.joblib --text "Please send the meeting notes tomorrow"
