@@ -23,7 +23,3 @@ The project is designed around the UCI SMS Spam Collection Dataset. This experim
 In the initial software demonstration, the learned models achieved 100% accuracy on a simulated dataset of 360 messages. However, Demonstration model returns ham with spam probability 0.000126 at threshold 0.5. Negative contributions from features such as 'meeting notes', 'notes', 'please', and 'tomorrow' reduce spam log-odds. 
 
 **Development date:** December 2024
-
-~~~bash
-python main.py predict --model demo_run/models/model.joblib --text "Please send the meeting notes tomorrow"
-~~~
