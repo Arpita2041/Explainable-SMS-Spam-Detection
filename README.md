@@ -1,8 +1,8 @@
 # Explainable SMS Spam Detection
 
 The main objective is to develop a Machine Learning system that automatically classifies SMS messages as Spam or Ham and explains why a particular classification was made.
-	- Spam: Unwanted, suspicious, fraudulent, or unsolicited promotional messages.
-	- Ham: Normal, legitimate SMS messages.
+- Spam: Unwanted, suspicious, fraudulent, or unsolicited promotional messages.
+- Ham: Normal, legitimate SMS messages.
 Instead of simply predicting Spam or Ham, the system identifies which text features contributed to the prediction using exact feature contributions.
 
 ## Setup
